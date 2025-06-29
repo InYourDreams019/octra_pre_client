@@ -1,7 +1,6 @@
-#!/bin/bash
-set -e
-if ! command -v python3 &>/dev/null; then echo "python3 not found"; exit 1; fi
-[ ! -d "venv" ] && python3 -m venv venv
-source venv/bin/activate
+git clone https://github.com/octra-labs/octra_pre_client.git
+cd octra_pre_client
+python3 -m venv venv
+source venv/bin/activate # for windows use: venv\Scripts\activate
 pip install -r requirements.txt
-python cli.py
+cp wallet.json.example wallet.json
